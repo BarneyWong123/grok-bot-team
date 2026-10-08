@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Grok Bot Team — free Grok Bot templates by Barney Wong</title>
+<meta name="description" content="Free Grok Bot templates from the ~20 AI bots that run my sales week: the org chart, the 5 bots to set up first, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F5F1; --grid:rgba(14,14,16,.045); --ink:#0E0E10; --grey:#6B6B73; --soft:#9A9AA3;
+  --card:#FFFFFF; --line:#E7E5DF;
+  --blue:#2F6BFF; --orange:#F2782B; --red:#EE4B42; --purple:#9539EE; --mint:#3FE0A0; --pink:#F04F8C; --yellow:#F6B72C;
+  --font-display:"Archivo Black","Arial Black",sans-serif;
+  --font-body:"Figtree","Helvetica Neue",sans-serif;
+  --r-card:26px; --u:8px;
+  --shadow:0 30px 50px -28px rgba(28,30,70,.35),0 10px 22px -12px rgba(28,30,70,.12),0 1px 2px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body); color:var(--ink); background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:44px 44px; background-position:-1px -1px; overflow-x:hidden; line-height:1.45;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative}
+
+/* ---------- mascots ---------- */
+.mascot{display:block;overflow:visible}
+.eyes{transform-box:fill-box;transform-origin:center;animation:blink 6.5s infinite}
+@keyframes blink{0%,95%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+.float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-12px) rotate(calc(var(--rot,0deg) + 4deg))}}
+
+/* ---------- top bar ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0 0}
+.handle{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:15px;text-decoration:none;letter-spacing:-.01em}
+.handle .xlogo{width:30px;height:30px;padding:8px;border-radius:50%;background:var(--ink);color:#fff;flex:none;transition:transform .25s}
+.handle span{border-bottom:2px solid transparent;transition:border-color .2s}
+.handle:hover .xlogo{transform:rotate(-10deg)}.handle:hover span{border-color:var(--mint)}
+.top a.pill{font-weight:700;font-size:14px;text-decoration:none;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;transition:transform .2s}
+.top a.pill:hover{transform:translateY(-2px)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:64px 0 40px;min-height:540px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+.eyebrow b{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+h1{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(58px,11.2vw,150px);line-height:.86;letter-spacing:-.045em;margin:26px 0 22px;position:relative;z-index:2}
+h1 span{display:block}
+.sub{font-size:clamp(21px,2.5vw,31px);font-weight:500;color:var(--grey);letter-spacing:-.02em;max-width:640px;line-height:1.18;text-wrap:balance;position:relative;z-index:2}
+.intro{margin-top:28px;font-size:18px;max-width:560px;position:relative;z-index:2}
+.intro p+p{margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative;z-index:2}
+.chip{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 10px;box-shadow:0 6px 14px -10px rgba(0,0,0,.25)}
+.chip i{width:9px;height:9px;border-radius:50%}
+.hero-bot{position:absolute;right:-34px;top:40px;z-index:1}
+.hero-bot .mascot{width:min(400px,38vw);height:auto;filter:drop-shadow(0 40px 40px rgba(47,107,255,.28))}
+.spark{position:absolute;right:6px;top:10px;width:90px;height:90px}
+.f1{position:absolute;left:600px;bottom:44px;--rot:-14deg}
+.f2{position:absolute;right:20px;top:470px;--rot:10deg;animation-delay:-2s}
+.f3{position:absolute;right:400px;top:52px;--rot:-8deg;animation-delay:-4s}
+
+/* ---------- resources ---------- */
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:30px 0 12px;flex-wrap:wrap}
+.label{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.count{color:var(--grey);font-size:14px;font-weight:600}
+.fan{display:flex;justify-content:center;align-items:flex-start;padding:30px 0 104px;position:relative}
+.card{
+  position:relative;background:var(--card);border-radius:var(--r-card);box-shadow:var(--shadow);
+  width:340px;padding:30px 28px 26px;margin:0 -10px;text-align:center;text-decoration:none;color:inherit;
+  transform:rotate(var(--tilt)) translateY(var(--lift,0));transition:transform .35s cubic-bezier(.2,.9,.3,1.3),box-shadow .35s;
+  animation:rise .9s cubic-bezier(.2,.9,.3,1.1) both;
+}
+.card:nth-child(1){--tilt:-6deg;--lift:26px;z-index:1;animation-delay:.15s}
+.card:nth-child(2){--tilt:0deg;--lift:0px;z-index:3;animation-delay:.3s}
+.card:nth-child(3){--tilt:5deg;--lift:30px;z-index:2;animation-delay:.45s}
+.card:hover{transform:rotate(0deg) translateY(-10px);z-index:5;box-shadow:0 40px 60px -26px rgba(28,30,70,.4),0 2px 4px rgba(0,0,0,.05)}
+@keyframes rise{from{opacity:0;transform:rotate(var(--tilt)) translateY(80px)}}
+.dot{position:absolute;top:20px;right:20px;width:13px;height:13px;border-radius:50%}
+.card .mascot{margin:6px auto 14px;width:150px;height:150px;transition:transform .35s}
+.card:hover .mascot{transform:translateY(-6px) rotate(-4deg)}
+.badge{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:6px 12px}
+.badge.on{background:var(--ink);color:#fff}
+.badge.on i{width:7px;height:7px;border-radius:50%;background:var(--mint)}
+.badge.soon{background:#F1F0EC;color:var(--grey);border:1px dashed #CFCDC6}
+.card h3{font-family:var(--font-body);font-weight:800;font-size:25px;letter-spacing:-.025em;line-height:1.1;margin:14px 0 8px}
+.card p{color:var(--grey);font-size:15.5px;line-height:1.4;min-height:44px}
+.card .go{display:inline-block;margin-top:18px;font-weight:800;font-size:15px;border-bottom:2px solid currentColor;padding-bottom:1px}
+.card.soon-card .go{color:var(--soft);border-bottom-style:dashed}
+
+/* ---------- signup ---------- */
+.signup{position:relative;margin:10px auto 0;max-width:1020px;background:#fff;border-radius:34px;box-shadow:var(--shadow);padding:54px 56px;display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;transform:rotate(-1deg)}
+.signup>*{transform:rotate(1deg)}
+.signup .dot{top:26px;right:28px;background:var(--purple)}
+.signup h2{font-family:var(--font-display);text-transform:uppercase;font-size:clamp(38px,4.6vw,58px);line-height:.9;letter-spacing:-.04em}
+.signup .lede{color:var(--grey);font-size:18px;margin-top:16px;max-width:420px}
+.peek{position:absolute;top:-78px;left:46%;--rot:-8deg}
+.peek2{position:absolute;bottom:-34px;right:-30px;--rot:12deg;animation-delay:-3s}
+form{display:grid;gap:12px}
+.field label{display:block;font-weight:700;font-size:13px;margin:0 0 6px 4px}
+.field input{width:100%;font:inherit;font-size:17px;padding:16px 18px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);transition:border-color .2s,background .2s}
+.field input:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(47,107,255,.14)}
+button{font:inherit;font-weight:800;font-size:18px;letter-spacing:-.01em;color:#fff;background:var(--ink);border:0;border-radius:16px;padding:18px 22px;cursor:pointer;margin-top:6px;display:flex;justify-content:center;align-items:center;gap:10px;transition:transform .2s,background .2s}
+button:hover{transform:translateY(-2px);background:var(--blue)}
+.fine{color:var(--soft);font-size:13px;text-align:center;margin-top:2px}
+.note{display:none;font-weight:700;font-size:14px;color:var(--blue);text-align:center}
+.note.show{display:block}
+
+/* ---------- footer ---------- */
+footer{text-align:center;padding:110px 0 70px;position:relative}
+.follow{display:inline-flex;align-items:center;gap:14px;font-family:var(--font-display);text-transform:uppercase;font-size:clamp(26px,4vw,46px);letter-spacing:-.035em;text-decoration:none;line-height:1}
+.follow svg{width:.9em;height:.9em;flex:none}
+.follow em{font-style:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:linear-gradient(transparent 62%,rgba(63,224,160,.55) 62%);padding:0 4px}
+.follow:hover em{background:linear-gradient(transparent 62%,rgba(47,107,255,.35) 62%)}
+.foot-sub{color:var(--grey);font-size:15px;margin-top:14px}
+.foot-bots{display:flex;justify-content:center;gap:10px;margin-bottom:22px}
+
+/* ---------- motion ---------- */
+.in{animation:fadeup .8s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.2s}.d4{animation-delay:.28s}.d5{animation-delay:.36s}
+@keyframes fadeup{from{opacity:0;transform:translateY(22px)}}
+.hero-bot{animation:pop 1s cubic-bezier(.2,1.4,.4,1) .2s both}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotate(-10deg)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero{min-height:0;padding-top:40px}
+  .hero-bot{position:relative;right:auto;top:auto;display:flex;justify-content:flex-end;margin:-10px -10px -30px 0}
+  .hero-bot .mascot{width:240px}
+  .f3{display:none}
+  .fan{flex-direction:column;align-items:center;gap:26px;padding:16px 0 50px}
+  .card{margin:0;width:min(380px,100%)}
+  .card:nth-child(1){--tilt:-2.5deg;--lift:0px}
+  .card:nth-child(3){--tilt:2.5deg;--lift:0px}
+  .signup{grid-template-columns:1fr;padding:44px 26px 34px;gap:26px;transform:rotate(-.6deg)}
+  .signup>*{transform:rotate(.6deg)}
+  .peek{left:auto;right:30px;top:-64px}
+  .signup .dot{right:auto;left:26px;top:20px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .top a.pill{display:none}
+  .hero{padding-top:28px}
+  .hero-bot{position:absolute;right:-2px;top:-6px;margin:0}
+  .hero-bot .mascot{width:140px}
+  .spark{width:54px;height:54px;right:-2px;top:-4px}
+  h1{margin-top:92px;font-size:clamp(52px,16vw,72px)}
+  .intro{font-size:16.5px}
+  .f1,.f2{display:none}
+  .peek .mascot{width:96px;height:96px}
+  .peek{top:-52px}
+  .peek2{right:-4px;bottom:-26px}
+  .follow{flex-direction:column;gap:12px;font-size:27px;line-height:1.15}
+  .peek2 .mascot{width:52px;height:52px}
+  footer{padding:80px 0 50px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top in d1">
+    <a class="handle" href="https://x.com/BarneyWong95" aria-label="Barney on X"><svg class="xlogo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Barney on X</span></a>
+    <a class="pill" href="#signup">Get the templates</a>
+  </header>
+
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-bot">
+      <svg class="spark" viewBox="0 0 90 90" aria-hidden="true"><g stroke="#2F6BFF" stroke-width="7" stroke-linecap="round"><path d="M38 34 L48 12"/><path d="M52 46 L76 34"/><path d="M58 64 L82 66"/></g></svg>
+      <svg class="mascot " viewBox="0 0 100 100" width="400" height="400" aria-hidden="true" focusable="false"><defs><radialGradient id="g1" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#9CC2FF"/><stop offset=".52" stop-color="#2F6BFF"/><stop offset="1" stop-color="#1438B8"/></radialGradient><filter id="f1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c1"><ellipse cx="50" cy="52" rx="42" ry="40"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f1)"/><g fill="url(#g1)"><ellipse cx="50" cy="52" rx="42" ry="40"/></g><g clip-path="url(#c1)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#9CC2FF" opacity=".35" filter="url(#f1)"/><ellipse cx="33" cy="30" rx="15" ry="8" fill="#fff" opacity=".6" filter="url(#f1)" transform="rotate(-30 33 30)"/><circle cx="31" cy="29" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#ffffff" style="animation-delay:1.37s"><ellipse cx="41" cy="44" rx="5.2" ry="11" transform="rotate(8 41 44)"/><ellipse cx="59" cy="44" rx="5.2" ry="11" transform="rotate(8 59 44)"/></g></svg>
+    </div>
+    <div class="f3 float"><svg class="mascot " viewBox="0 0 100 100" width="46" height="46" aria-hidden="true" focusable="false"><defs><radialGradient id="g2" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFE59A"/><stop offset=".52" stop-color="#F6B72C"/><stop offset="1" stop-color="#BF8106"/></radialGradient><filter id="f2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c2"><circle cx="50" cy="52" r="37"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f2)"/><g fill="url(#g2)"><circle cx="50" cy="52" r="37"/></g><g clip-path="url(#c2)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFE59A" opacity=".35" filter="url(#f2)"/><ellipse cx="34" cy="34" rx="11" ry="6" fill="#fff" opacity=".6" filter="url(#f2)" transform="rotate(-35 34 34)"/><circle cx="32" cy="33" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:2.74s"><ellipse cx="42.5" cy="52" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="52" rx="3.6" ry="6.8" transform=""/></g></svg></div>
+
+    <span class="eyebrow in d1"><b></b>Free resource hub</span>
+    <h1 id="title" class="in d2"><span>My Grok</span><span>Bot Team</span></h1>
+    <p class="sub in d3">Free Grok Bot templates from the ~20 bots that run my sales week</p>
+    <div class="intro in d4">
+      <p>I sell medical diagnostics across East Malaysia, and about 20 Grok Bots help me run the week.</p>
+      <p>These are the setups I actually use. Copy them, break them, make them yours.</p>
+    </div>
+    <div class="chips in d5" aria-label="What I share">
+      <span class="chip"><i style="background:var(--blue)"></i>What they do</span>
+      <span class="chip"><i style="background:var(--red)"></i>What breaks</span>
+      <span class="chip"><i style="background:var(--mint)"></i>What stays human</span>
+    </div>
+    <div class="f1 float"><svg class="mascot " viewBox="0 0 100 100" width="84" height="84" aria-hidden="true" focusable="false"><defs><radialGradient id="g3" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFC08F"/><stop offset=".52" stop-color="#F2782B"/><stop offset="1" stop-color="#B94A0C"/></radialGradient><filter id="f3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c3"><path d="M50 18C61 18 88 58 85 73C83 85 17 85 15 73C12 58 39 18 50 18Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f3)"/><g fill="url(#g3)"><path d="M50 18C61 18 88 58 85 73C83 85 17 85 15 73C12 58 39 18 50 18Z"/></g><g clip-path="url(#c3)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFC08F" opacity=".35" filter="url(#f3)"/><ellipse cx="40" cy="40" rx="8" ry="5" fill="#fff" opacity=".6" filter="url(#f3)" transform="rotate(-45 40 40)"/><circle cx="38" cy="39" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:4.11s"><ellipse cx="43" cy="62" rx="3.4" ry="6.4" transform=""/><ellipse cx="57" cy="62" rx="3.4" ry="6.4" transform=""/></g></svg></div>
+    <div class="f2 float"><svg class="mascot " viewBox="0 0 100 100" width="64" height="64" aria-hidden="true" focusable="false"><defs><radialGradient id="g4" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFB0CC"/><stop offset=".52" stop-color="#F04F8C"/><stop offset="1" stop-color="#B51F5B"/></radialGradient><filter id="f4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c4"><circle cx="50" cy="52" r="37"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f4)"/><g fill="url(#g4)"><circle cx="50" cy="52" r="37"/></g><g clip-path="url(#c4)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFB0CC" opacity=".35" filter="url(#f4)"/><ellipse cx="34" cy="34" rx="11" ry="6" fill="#fff" opacity=".6" filter="url(#f4)" transform="rotate(-35 34 34)"/><circle cx="32" cy="33" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:5.48s"><ellipse cx="42.5" cy="52" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="52" rx="3.6" ry="6.8" transform=""/></g></svg></div>
+  </section>
+
+  <section aria-labelledby="res">
+    <div class="section-head">
+      <h2 id="res" class="label">The templates</h2>
+      <span class="count">1 ready · 2 on the way</span>
+    </div>
+    <div class="fan">
+      <a class="card" href="#signup">
+        <span class="dot" style="background:var(--orange)"></span>
+        <svg class="mascot " viewBox="0 0 100 100" width="150" height="150" aria-hidden="true" focusable="false"><defs><radialGradient id="g5" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#9CC2FF"/><stop offset=".52" stop-color="#2F6BFF"/><stop offset="1" stop-color="#1438B8"/></radialGradient><filter id="f5" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c5"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f5)"/><g fill="url(#g5)"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></g><g clip-path="url(#c5)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#9CC2FF" opacity=".35" filter="url(#f5)"/><ellipse cx="31" cy="33" rx="12" ry="6" fill="#fff" opacity=".6" filter="url(#f5)" transform="rotate(-20 31 33)"/><circle cx="29" cy="32" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:0.85s"><ellipse cx="42.5" cy="50" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="50" rx="3.6" ry="6.8" transform=""/></g></svg>
+        <span class="badge on"><i></i>Available</span>
+        <h3>My Grok Bot Team</h3>
+        <p>Org chart + the 5 bots to set up first</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="card soon-card" href="#signup">
+        <span class="dot" style="background:var(--mint)"></span>
+        <svg class="mascot " viewBox="0 0 100 100" width="150" height="150" aria-hidden="true" focusable="false"><defs><radialGradient id="g6" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFC08F"/><stop offset=".52" stop-color="#F2782B"/><stop offset="1" stop-color="#B94A0C"/></radialGradient><filter id="f6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c6"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f6)"/><g fill="url(#g6)"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></g><g clip-path="url(#c6)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFC08F" opacity=".35" filter="url(#f6)"/><ellipse cx="34" cy="52" rx="8" ry="12" fill="#fff" opacity=".6" filter="url(#f6)" transform="rotate(20 34 52)"/><circle cx="32" cy="51" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:2.22s"><ellipse cx="43" cy="63" rx="3.4" ry="6.4" transform=""/><ellipse cx="57" cy="63" rx="3.4" ry="6.4" transform=""/></g></svg>
+        <span class="badge soon">Coming soon</span>
+        <h3>Tender &amp; RFQ Reader</h3>
+        <p>Reads the spec sheet, drafts the compliance answers</p>
+        <span class="go">Get it when it drops</span>
+      </a>
+      <a class="card soon-card" href="#signup">
+        <span class="dot" style="background:var(--pink)"></span>
+        <svg class="mascot " viewBox="0 0 100 100" width="150" height="150" aria-hidden="true" focusable="false"><defs><radialGradient id="g7" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#D7A6FF"/><stop offset=".52" stop-color="#9539EE"/><stop offset="1" stop-color="#5A14A8"/></radialGradient><filter id="f7" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c7"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f7)"/><g fill="url(#g7)"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></g><g clip-path="url(#c7)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#D7A6FF" opacity=".35" filter="url(#f7)"/><ellipse cx="34" cy="52" rx="8" ry="12" fill="#fff" opacity=".6" filter="url(#f7)" transform="rotate(20 34 52)"/><circle cx="32" cy="51" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:3.59s"><ellipse cx="43" cy="63" rx="3.4" ry="6.4" transform=""/><ellipse cx="57" cy="63" rx="3.4" ry="6.4" transform=""/></g></svg>
+        <span class="badge soon">Coming soon</span>
+        <h3>Visit Prep Bot</h3>
+        <p>A one-page brief before each customer visit</p>
+        <span class="go">Get it when it drops</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="signup" id="signup" aria-labelledby="su">
+    <span class="dot"></span>
+    <div class="peek float"><svg class="mascot " viewBox="0 0 100 100" width="120" height="120" aria-hidden="true" focusable="false"><defs><radialGradient id="g8" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FF9A8F"/><stop offset=".52" stop-color="#EE4B42"/><stop offset="1" stop-color="#AE231D"/></radialGradient><filter id="f8" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c8"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f8)"/><g fill="url(#g8)"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></g><g clip-path="url(#c8)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FF9A8F" opacity=".35" filter="url(#f8)"/><ellipse cx="31" cy="33" rx="12" ry="6" fill="#fff" opacity=".6" filter="url(#f8)" transform="rotate(-20 31 33)"/><circle cx="29" cy="32" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:4.96s"><ellipse cx="42.5" cy="50" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="50" rx="3.6" ry="6.8" transform=""/></g></svg></div>
+    <div class="peek2 float"><svg class="mascot " viewBox="0 0 100 100" width="70" height="70" aria-hidden="true" focusable="false"><defs><radialGradient id="g9" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#B8FFE0"/><stop offset=".52" stop-color="#3FE0A0"/><stop offset="1" stop-color="#14A06A"/></radialGradient><filter id="f9" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c9"><rect x="18" y="22" width="64" height="60" rx="21"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f9)"/><g fill="url(#g9)"><rect x="18" y="22" width="64" height="60" rx="21"/></g><g clip-path="url(#c9)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#B8FFE0" opacity=".35" filter="url(#f9)"/><ellipse cx="32" cy="32" rx="11" ry="6" fill="#fff" opacity=".6" filter="url(#f9)" transform="rotate(-25 32 32)"/><circle cx="30" cy="31" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:0.33s"><ellipse cx="42.5" cy="52" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="52" rx="3.6" ry="6.8" transform=""/></g></svg></div>
+    <div>
+      <h2 id="su">Get the Grok Bot<br>templates.</h2>
+      <p class="lede">Leave your email. I'll send the bot team guide now, and each new template when it's ready.</p>
+    </div>
+    <!-- Kit (ConvertKit) free form embed goes here. Placeholder only: no backend, nothing is submitted. -->
+    <form action="#" method="post" onsubmit="event.preventDefault();document.getElementById('note').classList.add('show');">
+      <div class="field"><label for="name">First name</label><input id="name" name="name" type="text" autocomplete="given-name" placeholder="Your name"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
+      <button type="submit">Send me the templates <span aria-hidden="true">→</span></button>
+      <p class="fine">Free. Unsubscribe any time.</p>
+      <p class="note" id="note" role="status">Preview only: this form isn't connected yet.</p>
+    </form>
+  </section>
+
+  <footer>
+    <div class="foot-bots" aria-hidden="true"><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g10" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#9CC2FF"/><stop offset=".52" stop-color="#2F6BFF"/><stop offset="1" stop-color="#1438B8"/></radialGradient><filter id="f10" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c10"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f10)"/><g fill="url(#g10)"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></g><g clip-path="url(#c10)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#9CC2FF" opacity=".35" filter="url(#f10)"/><ellipse cx="31" cy="33" rx="12" ry="6" fill="#fff" opacity=".6" filter="url(#f10)" transform="rotate(-20 31 33)"/><circle cx="29" cy="32" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:1.70s"><ellipse cx="42.5" cy="50" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="50" rx="3.6" ry="6.8" transform=""/></g></svg><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g11" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFC08F"/><stop offset=".52" stop-color="#F2782B"/><stop offset="1" stop-color="#B94A0C"/></radialGradient><filter id="f11" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c11"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f11)"/><g fill="url(#g11)"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></g><g clip-path="url(#c11)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFC08F" opacity=".35" filter="url(#f11)"/><ellipse cx="34" cy="52" rx="8" ry="12" fill="#fff" opacity=".6" filter="url(#f11)" transform="rotate(20 34 52)"/><circle cx="32" cy="51" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:3.07s"><ellipse cx="43" cy="63" rx="3.4" ry="6.4" transform=""/><ellipse cx="57" cy="63" rx="3.4" ry="6.4" transform=""/></g></svg><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g12" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FF9A8F"/><stop offset=".52" stop-color="#EE4B42"/><stop offset="1" stop-color="#AE231D"/></radialGradient><filter id="f12" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c12"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f12)"/><g fill="url(#g12)"><path d="M50 20C75 20 83 25 84 47C85 68 79 82 50 82C21 82 15 68 16 47C17 25 25 20 50 20Z"/></g><g clip-path="url(#c12)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FF9A8F" opacity=".35" filter="url(#f12)"/><ellipse cx="31" cy="33" rx="12" ry="6" fill="#fff" opacity=".6" filter="url(#f12)" transform="rotate(-20 31 33)"/><circle cx="29" cy="32" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:4.44s"><ellipse cx="42.5" cy="50" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="50" rx="3.6" ry="6.8" transform=""/></g></svg><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g13" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#D7A6FF"/><stop offset=".52" stop-color="#9539EE"/><stop offset="1" stop-color="#5A14A8"/></radialGradient><filter id="f13" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c13"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f13)"/><g fill="url(#g13)"><path d="M50 8C58 25 83 43 83 64C83 82 69 91 50 91C31 91 17 82 17 64C17 43 42 25 50 8Z"/></g><g clip-path="url(#c13)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#D7A6FF" opacity=".35" filter="url(#f13)"/><ellipse cx="34" cy="52" rx="8" ry="12" fill="#fff" opacity=".6" filter="url(#f13)" transform="rotate(20 34 52)"/><circle cx="32" cy="51" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:5.81s"><ellipse cx="43" cy="63" rx="3.4" ry="6.4" transform=""/><ellipse cx="57" cy="63" rx="3.4" ry="6.4" transform=""/></g></svg><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g14" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#B8FFE0"/><stop offset=".52" stop-color="#3FE0A0"/><stop offset="1" stop-color="#14A06A"/></radialGradient><filter id="f14" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c14"><rect x="18" y="22" width="64" height="60" rx="21"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f14)"/><g fill="url(#g14)"><rect x="18" y="22" width="64" height="60" rx="21"/></g><g clip-path="url(#c14)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#B8FFE0" opacity=".35" filter="url(#f14)"/><ellipse cx="32" cy="32" rx="11" ry="6" fill="#fff" opacity=".6" filter="url(#f14)" transform="rotate(-25 32 32)"/><circle cx="30" cy="31" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:1.18s"><ellipse cx="42.5" cy="52" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="52" rx="3.6" ry="6.8" transform=""/></g></svg><svg class="mascot " viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" focusable="false"><defs><radialGradient id="g15" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#FFB0CC"/><stop offset=".52" stop-color="#F04F8C"/><stop offset="1" stop-color="#B51F5B"/></radialGradient><filter id="f15" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="c15"><circle cx="50" cy="52" r="37"/></clipPath></defs><ellipse cx="50" cy="95" rx="27" ry="3.6" fill="rgba(30,30,60,.16)" filter="url(#f15)"/><g fill="url(#g15)"><circle cx="50" cy="52" r="37"/></g><g clip-path="url(#c15)"><ellipse cx="70" cy="88" rx="26" ry="10" fill="#FFB0CC" opacity=".35" filter="url(#f15)"/><ellipse cx="34" cy="34" rx="11" ry="6" fill="#fff" opacity=".6" filter="url(#f15)" transform="rotate(-35 34 34)"/><circle cx="32" cy="33" r="2.2" fill="#fff" opacity=".9"/></g><g class="eyes" fill="#121214" style="animation-delay:2.55s"><ellipse cx="42.5" cy="52" rx="3.6" ry="6.8" transform=""/><ellipse cx="57.5" cy="52" rx="3.6" ry="6.8" transform=""/></g></svg></div>
+    <a class="follow" href="https://x.com/BarneyWong95">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span><em>Follow me on X</em></span>
+    </a>
+    <p class="foot-sub">What the bots do, what breaks, and what stays human.</p>
+  </footer>
+</div>
+</body>
+</html>
