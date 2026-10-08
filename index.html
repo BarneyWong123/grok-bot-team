@@ -100,15 +100,11 @@ h1 span{display:block}
 .signup .lede{color:var(--grey);font-size:18px;margin-top:16px;max-width:420px}
 .peek{position:absolute;top:-78px;left:46%;--rot:-8deg}
 .peek2{position:absolute;bottom:-34px;right:-30px;--rot:12deg;animation-delay:-3s}
-form{display:grid;gap:12px}
-.field label{display:block;font-weight:700;font-size:13px;margin:0 0 6px 4px}
-.field input{width:100%;font:inherit;font-size:17px;padding:16px 18px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);transition:border-color .2s,background .2s}
-.field input:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(47,107,255,.14)}
-button{font:inherit;font-weight:800;font-size:18px;letter-spacing:-.01em;color:#fff;background:var(--ink);border:0;border-radius:16px;padding:18px 22px;cursor:pointer;margin-top:6px;display:flex;justify-content:center;align-items:center;gap:10px;transition:transform .2s,background .2s}
-button:hover{transform:translateY(-2px);background:var(--blue)}
-.fine{color:var(--soft);font-size:13px;text-align:center;margin-top:2px}
-.note{display:none;font-weight:700;font-size:14px;color:var(--blue);text-align:center}
-.note.show{display:block}
+.cta-box{display:grid;gap:14px}
+.cta{font-family:var(--font-body);font-weight:800;font-size:22px;letter-spacing:-.01em;color:#fff;background:var(--ink);text-decoration:none;border-radius:18px;padding:24px 26px;display:flex;justify-content:center;align-items:center;gap:12px;box-shadow:0 18px 30px -18px rgba(14,14,16,.55);transition:transform .2s,background .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-3px);background:var(--blue);box-shadow:0 22px 34px -18px rgba(47,107,255,.6)}
+.cta span{transition:transform .2s}.cta:hover span{transform:translateX(4px)}
+.fine{color:var(--soft);font-size:14px;text-align:center}
 
 /* ---------- footer ---------- */
 footer{text-align:center;padding:110px 0 70px;position:relative}
@@ -232,14 +228,10 @@ footer{text-align:center;padding:110px 0 70px;position:relative}
       <h2 id="su">Get the Grok Bot<br>templates.</h2>
       <p class="lede">Leave your email. I'll send the bot team guide now, and each new template when it's ready.</p>
     </div>
-    <!-- Kit (ConvertKit) free form embed goes here. Placeholder only: no backend, nothing is submitted. -->
-    <form action="#" method="post" onsubmit="event.preventDefault();document.getElementById('note').classList.add('show');">
-      <div class="field"><label for="name">First name</label><input id="name" name="name" type="text" autocomplete="given-name" placeholder="Your name"></div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
-      <button type="submit">Send me the templates <span aria-hidden="true">→</span></button>
-      <p class="fine">Free. Unsubscribe any time.</p>
-      <p class="note" id="note" role="status">Thanks! Sign-up opens very soon. Follow me on X meanwhile.</p>
-    </form>
+    <div class="cta-box">
+      <a class="cta" href="https://barneywong.gumroad.com/l/engkm?wanted=true" target="_blank" rel="noopener">Get the free guide <span aria-hidden="true">→</span></a>
+      <p class="fine">Free. Enter your email and it lands in your inbox.</p>
+    </div>
   </section>
 
   <footer>
